@@ -118,7 +118,7 @@ public class Transport {
 		// "AAA Type is moving on Fromâ€“To, 180km"
 		// TODO If there is no enough fuel in tank, return string in form:
 		// "Cannot move on Fromâ€“To, 180km. Necessary
-		// fuel:0.00l, fuel in tank:0.00l"
+		// fuel:0.00l, fuel in tank:0.00l" --
 		
 		
 	}

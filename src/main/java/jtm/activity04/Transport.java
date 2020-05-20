@@ -44,6 +44,24 @@ public class Transport {
 	public float getFuelInTank() {
 		return fuelInTank;
 	}
+	public void setConsumption(float consumption) {
+		this.consumption = consumption;
+	}
+
+
+	public void setTankSize(int tankSize) {
+		this.tankSize = tankSize;
+	}
+
+
+	public void setFuelInTank(float fuelInTank) {
+		this.fuelInTank = fuelInTank;
+	}
+	
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 
 	/*- TODO #3
@@ -55,6 +73,9 @@ public class Transport {
 	 * to 2 decimal for fractions, and dot as a decimal delimiter.
 	 */
 	
+	
+
+
 	@Override
 	public String toString() {
 		
@@ -103,8 +124,5 @@ public class Transport {
 	}
 
 
-	public void setId(String id) {
-		this.id = id;
-	}
 
 }

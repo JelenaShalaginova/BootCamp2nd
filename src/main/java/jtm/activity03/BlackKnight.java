@@ -40,7 +40,7 @@ public class BlackKnight {
 		// 3. put reference of this knight into next free cell of knights static
 		// array
 		//???
-		
+		knights[totalKnights]= this;
 		
 		// 4. increase number of total and alive knights of static counters
 		aliveKnights ++;
@@ -53,59 +53,74 @@ public class BlackKnight {
 		// TODO handle cutting off knight's arms in following way:
 		// If knight is dead, return "Only chicken beats dead!"
 		if(!alive) {
-			System.out.println("Only chicken beats dead!");
+			return "Only chicken beats dead";
 		
 		// If knight has some arms, cut one off and return "Bugger!"
 		}else if(arms>0) {
-			System.out.println("Bugger!");
 			arms--;
+			return "Bugger!";
 		
 		// Else return just "Haah!"
 		}else {
-			System.out.println("Haah!");
+			return "Haah!";
 		}
-		return cutOffArm();
 	}
 
 	public String cutOffLeg() {
 		// TODO handle cutting off legs knight's legs in following way:
 		// If knight is dead, return "Only chicken beats dead!"
 		if(!alive) {
-			System.out.println("Only chicken beats dead!");
+			return "Only chicken beats dead";
 		// If knight has some legs, cut one off and return "Bollocks!"
 			}else if(legs>0) {
-				System.out.println("Bollocks!");
 				legs--;
+				return "Bugger!";
+				
 		// Else return just "Haah!"
 			}else {
-				System.out.println("Haah!");
+				return "Haah!";
 				
 			}
-		return cutOffLeg();
 	}
 
 	public String cutOffHead() {
 		// TODO handle cutting off knight's head in following way:
 		// If knight is dead, return "Only chicken beats dead!"
 		if(!alive) {
-			System.out.println("Only chicken beats dead!");
+			return "Only chicken beats dead";
 		// If knight is alive and has head, cut it off and update
 		// number of total alive and dead knights and then
 		// If there are other knights alive return:
 		// "You'l newer win! Arthur, Cnut will still fight!"
 		// Where "Arthur, Cnut" are names of still alive knights
-		}else if(head>0){
+		}
+		if (head > 0){
 			head--;
 			alive = false;
 			aliveKnights--;
 			deadKnights++;	
-		}else if(aliveKnights>0){
-			System.out.println("You'll never win! Arthur, Cnut will still fight!");
+			
+		}
+		
+		if(aliveKnights>0){
+			return "You'll never win! " + aliveKnights() +  "will still fight!";
 		// Else return "You'l burn in hell forever!"
 		}else {
-			System.out.println("You'll burn in hell forever");
+			return "You'll burn in hell forever";
 		}
-		return cutOffHead();
+		
+	}
+	
+	private String aliveKnights() {
+		StringBuilder tmp = new StringBuilder("");
+		String delim = "";
+		for (int i=0; i< knights.length; i++) {
+			if (knights[i].alive) {
+				tmp.append(knights[i].name);
+				delim = ", ";
+			}
+		}
+		return null;
 	}
 
 }

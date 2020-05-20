@@ -13,7 +13,19 @@ public class GetOne {
 		// 6->3->10->5->16->8->4->2->1. Iteration count=8.
 		// HINT: Use while loop.
 		int iterationCount = 0;
+		
+		while (number > 1) {
+			if (number % 2 == 0) {
+				number /= 2;
+			}else {
+				number = (number * 3) + 1;
+			}
+			iterationCount++;
+		}
+		
 		return iterationCount;
+		
+		
 	}
 
 	public int theMostComplexNo(int maxNumber) {
@@ -24,7 +36,24 @@ public class GetOne {
 		// And return 3, because it has the biggest count of iterations.
 		// (If count of iterations is the same for several numbers, return
 		// smallest number).
-		return 0;
-	}
-
+		
+		int longestPath = -1;
+		int holder;
+		int maxsteps = -1;
+		
+		for (int i = 1; i <= maxNumber; i++) {
+			holder = this.iterations(i);
+			if (holder > maxsteps) {
+				maxsteps = holder;
+				longestPath = i;
+			}
+		}
+		
+		return longestPath;
+	
 }
+	
+}
+	
+	
+	

@@ -16,6 +16,12 @@ public class Zodiac {
 		// Look at wikipedia:
 		// https://en.wikipedia.org/wiki/Zodiac#Table_of_dates
 		// Tropical zodiac, to get appropriate date ranges for signs
+		
+		if ((month == 1 && day >= 21) || (month == 1 && day <=19))
+			zodiac = "Aquarius";
+		else if ((month == 2))
+		
+		return zodiac;
 		return zodiac;
 	}
 

@@ -121,7 +121,7 @@ public class Transport {
 		// fuel:0.00l, fuel in tank:0.00l" --
 		
 		
-	}
+	}//end class
 
 
 

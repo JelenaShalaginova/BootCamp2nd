@@ -23,6 +23,6 @@ public class Ship extends Transport {
 			super.setFuelInTank (getFuelInTank() - fuelAmount);
 		}
 		return movement;
-	}
+	}//end override
 
 }//end class

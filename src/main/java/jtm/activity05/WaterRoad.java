@@ -15,7 +15,7 @@ public class WaterRoad extends Road {
 	@Override
 	public String toString() {
 		
-		return getClass().getSimpleName() + super.toString();
+		return this.getClass().getSimpleName() + " " + super.toString();
 				
 				
 	}//end override

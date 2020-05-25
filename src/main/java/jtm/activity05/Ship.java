@@ -6,23 +6,18 @@ import jtm.activity04.Transport;
 public class Ship extends Transport {
 	
 	protected byte NumOfSails;
-	private String id;
 	
 	public Ship(String id, byte NumOfSails) {
-		super(id, 0f, 0);
-		this.id = id;
+		super(id, 0, 0);
 		this.NumOfSails = NumOfSails;
 	}//end constructor
 
 	@Override
 	public String move(Road road) {
-		String movement = "";
-		float fuelAmount = (super.getConsumption() * road.getDistance())/100;
-		
-		if(getFuelInTank() >= fuelAmount && road.getClass() == Road.class) {
-			super.setFuelInTank (getFuelInTank() - fuelAmount);
-		}
-		return movement;
-	}//end override
+		if(road instanceof WaterRoad) {
+			return getType() + " is sailing on " + road + " with " + NumOfSails + " sails";
+		}else
+		return "Cannot sail on " + road;
+	}
 
 }//end class

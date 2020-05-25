@@ -6,7 +6,7 @@ import jtm.activity04.Transport;
 public class Vehicle extends Transport {
 	
 	protected int NumOfWheels;
-	private String id;
+
 	
 	public Vehicle(String id, float consumption, int tankSize, int NumOfWheels) {
 		super(id, consumption, tankSize);
@@ -16,12 +16,15 @@ public class Vehicle extends Transport {
 	@Override
 	public String move(Road road) {
 		
-		String movement = "";
-		
-		
-		
-		return movement;
-		
+		if (road.getClass() == Road.class) {
+			String status = super.move(road);
+			if(!status.startsWith("Cannot"))
+				return getType() + " is driving on " + road + " with " + NumOfWheels +
+						" wheels";
+			else
+				return status;
+		}
+		return "Cannot drive on " + road;
 	}
 	
 	
